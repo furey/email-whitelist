@@ -1,14 +1,26 @@
 {
   "name": "email-whitelist",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "Utilities to validate/ensure email safety against an email whitelist.",
+  "main": "email-whitelist.js",
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "email",
+    "whitelist",
+    "validation",
+    "validate",
+    "ensure",
+    "safety",
+    "safe",
+    "node",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "James Furey (https://github.com/furey)",
+  "url": "https://github.com/furey",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "jest": "^24.9.0"
   }

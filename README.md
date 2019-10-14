@@ -1,6 +1,6 @@
 # email-whitelist
 
-Utilities to validate/ensure email safety against an email whitelist.
+Utilities to validate/ensure email safety against an email whitelist. 👮‍📧
 
 ## Contents
 

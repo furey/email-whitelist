@@ -24,8 +24,10 @@ $ npm install furey/email-whitelist#semver:^v1
 
 ## Usage
 
-```js
-const { isSafeEmail, ensureSafeEmail } = require('./email-whitelist')
+```JavaScript
+// example.js
+
+const { isSafeEmail, ensureSafeEmail } = require('email-whitelist')
 
 /**
  * Assuming the following `process.env` variables are set…
@@ -42,6 +44,17 @@ console.log(isSafeEmail('someone-else@other-domain.com')) // false
 console.log(ensureSafeEmail('me@personal-domain.com')) // 'me@personal-domain.com'
 console.log(ensureSafeEmail('other@work-domain.com')) // 'other@work-domain.com'
 console.log(ensureSafeEmail('someone-else@other-domain.com')) // 'me@work-domain.com'
+```
+
+```console
+$ node example.js
+
+true
+true
+false
+me@personal-domain.com
+other@work-domain.com
+me@work-domain.com
 ```
 
 ## Configuration

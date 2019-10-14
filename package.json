@@ -1,7 +1,7 @@
 {
   "name": "email-whitelist",
-  "version": "1.2.0",
-  "description": "Utilities to validate/ensure email safety against an email whitelist.",
+  "version": "1.3.0",
+  "description": "Utilities to validate/ensure emails against a whitelist.",
   "main": "email-whitelist.js",
   "scripts": {
     "test": "jest"

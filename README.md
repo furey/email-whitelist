@@ -1,6 +1,6 @@
 # email-whitelist
 
-Utilities to validate/ensure email safety against an email whitelist. 👮‍📧
+Utilities to validate/ensure emails against a whitelist. 👮‍📧
 
 ## Contents
 
@@ -13,8 +13,8 @@ Utilities to validate/ensure email safety against an email whitelist. 👮‍�
 
 ## Requirements
 
-- `node -v` >= 10.15.3
-- `npm -v` >= 6.4.1
+- [`node -v`](https://nodejs.org/en/download/) >= `v10.15.*`
+- [`npm -v`](https://www.npmjs.com/get-npm) >= `6.4.*`
 
 ## Installation
 

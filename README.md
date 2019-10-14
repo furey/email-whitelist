@@ -7,6 +7,7 @@ Utilities to validate/ensure emails against a whitelist. 👮‍📧
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Utilities](#utilities)
 - [Configuration](#configuration)
 - [Testing](#testing)
 - [License](#license)
@@ -27,7 +28,7 @@ $ npm install furey/email-whitelist#semver:^v1
 ```JavaScript
 // example.js
 
-const { isSafeEmail, ensureSafeEmail } = require('email-whitelist')
+const { isSafeEmail, getSafeEmail } = require('email-whitelist')
 
 /**
  * Assuming the following `process.env` variables are set…
@@ -41,9 +42,9 @@ console.log(isSafeEmail('me@personal-domain.com')) // true
 console.log(isSafeEmail('other@work-domain.com')) // true
 console.log(isSafeEmail('someone-else@other-domain.com')) // false
 
-console.log(ensureSafeEmail('me@personal-domain.com')) // 'me@personal-domain.com'
-console.log(ensureSafeEmail('other@work-domain.com')) // 'other@work-domain.com'
-console.log(ensureSafeEmail('someone-else@other-domain.com')) // 'me@work-domain.com'
+console.log(getSafeEmail('me@personal-domain.com')) // 'me@personal-domain.com'
+console.log(getSafeEmail('other@work-domain.com')) // 'other@work-domain.com'
+console.log(getSafeEmail('someone-else@other-domain.com')) // 'me@work-domain.com'
 ```
 
 ```console
@@ -56,6 +57,16 @@ me@personal-domain.com
 other@work-domain.com
 me@work-domain.com
 ```
+
+## Utilities
+
+### `isSafeEmail(email)`
+
+Returns whether `email` validates against the set [`EMAIL_WHITELIST`](#email_whitelist).
+
+### `getSafeEmail(email)`
+
+Returns `email` if `isSafeEmail(email)`, otherwise returns [`EMAIL_DEFAULT`](#email_default).
 
 ## Configuration
 
@@ -82,7 +93,7 @@ account@domain.com
 
 ### `EMAIL_DEFAULT`
 
-The optional default value to return from `ensureSafeEmail()` when an email fails validation, e.g.:
+The optional default value to return from `getSafeEmail()` when an email fails validation, e.g.:
 
 ```ini
 EMAIL_DEFAULT=me@work-domain.com

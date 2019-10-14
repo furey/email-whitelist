@@ -1,4 +1,4 @@
-const { isSafeEmail, ensureSafeEmail } = require('./email-whitelist')
+const { isSafeEmail, getSafeEmail } = require('./email-whitelist')
 
 process.env.EMAIL_WHITELIST = 'me@personal-domain.com,@work-domain.com'
 process.env.EMAIL_DEFAULT = 'me@work-domain.com'
@@ -17,8 +17,8 @@ emails.forEach(([email, shouldBeSafe]) => {
   test(`isSafeEmail: ${email}`, () => {
     expect(isSafeEmail(email)).toBe(shouldBeSafe)
   })
-  test(`ensureSafeEmail: ${email}`, () => {
-    expect(ensureSafeEmail(email)).toBe(
+  test(`getSafeEmail: ${email}`, () => {
+    expect(getSafeEmail(email)).toBe(
       shouldBeSafe === true
         ? email
         : process.env.EMAIL_DEFAULT

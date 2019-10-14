@@ -1,4 +1,4 @@
-const ensureSafeEmail = input =>
+const getSafeEmail = input =>
   isSafeEmail(input)
     ? input
     : getDefaultEmail()
@@ -41,5 +41,5 @@ const getDefaultEmail = _ =>
 
 module.exports = {
   isSafeEmail,
-  ensureSafeEmail
+  getSafeEmail
 }
